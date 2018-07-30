@@ -1,31 +1,27 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { Router} from "@angular/router";
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'app';
-  Posts = [
-    {
-      Title : 'azer',
-      Content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ',
-      LoveIts : 0,
-      CreatedAt : new Date()
+export class AppComponent implements OnInit{
 
-    },
-    {
-      Title : 'azer',
-      Content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ',
-      LoveIts : 0,
-      CreatedAt : new Date()
-    },
-    { Title : 'azer',
-      Content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ',
-      LoveIts: 0,
-      CreatedAt:  new Date()
-    }
 
-  ];
+
+  constructor() { const config = {
+    apiKey: "AIzaSyBc9whtMqAvF_ebzv_Dw_LkPq7S0KgYBtA",
+    authDomain: "http-client-demo-angular-cab6b.firebaseapp.com",
+    databaseURL: "https://http-client-demo-angular-cab6b.firebaseio.com",
+    projectId: "http-client-demo-angular-cab6b",
+    storageBucket: "http-client-demo-angular-cab6b.appspot.com",
+    messagingSenderId: "438660030866"
+  };
+    firebase.initializeApp(config);
+  }
+  ngOnInit(){
+
+  }
 }

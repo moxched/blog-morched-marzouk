@@ -1,5 +1,20 @@
 <div class="container">
-<ul class="list-group">
-<app-post-list-item *ngFor="let p of post" [Title]="p.Title" [Content]="p.Content" [CreatedAt]="p.CreatedAt" [LoveIts]="p.LoveIts"></app-post-list-item>
-</ul>
+  <div class="row">
+    <div class="col-xs-8">
+      <h2>Posts</h2>
+    </div>
+    <div class="col-xs-4"><button class="btn btn-primary pull-right" (click)="onCharge()">Charger les Posts</button>
+      <button class="btn btn-primary pull-right" (click)="onSave()">Sauvegarder les Posts</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-group">
+       <app-post-list-item *ngFor="let p of posts" [P]="p" ></app-post-list-item>
+      </ul>
+    </div>
+    <button class="btn btn-primary" (click)="addNewPost()">Ajouter un nouveau Post</button>
+  </div>
 </div>
